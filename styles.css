@@ -4,3 +4,13 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+
+.member-img {
+  height: 300px;
+  width: 234px;
+  object-fit: cover;
+}
+
+/* * {
+border: 1px solid red;
+} */
