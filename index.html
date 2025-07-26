@@ -30,22 +30,21 @@
 
   <!-- Page content -->
   <main>
-    <section class="d-flex flex-column" style="height: calc(100vh - 56px);">
-      <div id="splash" class="flex-fill d-flex justify-content-around align-items-center">
-        <div class="position-absolute text-center">
-          <h1 style="font-size: 80px;">Build Your Racing Car</h1>
-        </div>
+    <section class="position-relative" style="height: calc(100vh - 56px); width: 100vw;">
+      <div id="particles-container"></div>
+      <div class="position-absolute text-center d-flex flex-column justify-content-center" style="width: 100%; height: 100%;">
+        <h1 class="text-white" style="font-size: 80px;">Build Your Racing Car</h1>
       </div>
+    </section>
 
-      <div class="d-flex justify-content-around text-bg-dark">
-        <div class="d-flex flex-column align-items-center">
-          <h1 class="mt-2">2025</h1>
-          <h4>Established in</h4>
-        </div>
-        <div class="d-flex flex-column align-items-center">
-          <h1 class="mt-2">9</h1>
-          <h4>Members</h4>
-        </div>
+    <section class="d-flex justify-content-around text-bg-dark">
+      <div class="d-flex flex-column align-items-center">
+        <h1 class="mt-2">2025</h1>
+        <h4>Established in</h4>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <h1 class="mt-2">9</h1>
+        <h4>Members</h4>
       </div>
     </section>
 
@@ -112,9 +111,28 @@
         <p class="mb-0">© 2025 Gator Autonomous Racing. All rights reserved.</p>
     </div>
   </footer>
-
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-hyperspace@3.2.0/tsparticles.preset.hyperspace.bundle.min.js"></script>
+<script>
+    (async (engine) => {
+        await loadHyperspacePreset(engine);
+        await engine.load({ 
+          id: "particles-container", 
+          options: { 
+            preset: "hyperspace",
+            fullScreen: {
+              enable: false
+            },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              resize: true
+            },
+          }
+        });
+    })(tsParticles);
+</script>
 </html>
